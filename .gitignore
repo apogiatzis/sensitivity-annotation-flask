@@ -1,0 +1,5 @@
+.vscode
+__pycache__
+logs/**
+!logs/.gitkeep 
+.DS_Store

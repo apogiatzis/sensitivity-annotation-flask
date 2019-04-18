@@ -1,0 +1,53 @@
+
+<html>  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Deep Context-Aware Sensitivity</title>
+    <link rel="stylesheet" href="/static/styles/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img src="/static/images/glasgow.png"  height="50" class="d-inline-block align-top" alt="">
+        
+      </a>
+    </nav>
+    <div class="container">
+        <div class="intro">
+            <h1>Context-aware deep sensitivity annotation on textual data</h1>
+
+            <div class="authors">
+              <span>Author:</span> Antreas Pogiatzis
+              <br />
+              <span>Supervisor:</span> Dr. Inah Omoronyia
+            </div>
+
+            <span><b>Abstract:</b></span>
+            <p>
+            Identifying sensitive information is an essential intermediate step in privacy-preserving applications. However, privacy is an extremely elusive term which is heavily depended upon the context that is conveyed in, leading to vagueness in sensitivity annotation. This paper briefly presents a predictive context-aware sensitive information model based on Bidirectional Long Short Term Memory networks which can perform multi-class sensitivity annotation. We train our model on a synthetic annotated dataset and provide an evaluation on multiple axes. First, we provide a comparative evaluation of various word embedding types as the main feature of the model and highlight the superiority of contextualised word embeddings. Also, we point out that the integration of character embeddings is trivial and examine the contribution of additional features towards performance. Finally, we demonstrate the practical use of the proposed model on real data by providing further evaluation for particular temporal and variability scenarios.
+            </p>
+        </div>
+        <hr/>
+        <div class="interface">
+            <form id="form">
+                <textarea id="annotate-txtarea" name="data">Please type in your text to annotate.</textarea>
+            </form>
+            <!-- <button class="annotate-btn">Annotate</button> -->
+
+            <h4><strong>Annotated text:</strong> <img id="spinner" src="static/images/spinner.gif"/> <span class="timeout-msg">Timed Out!</span> </h4> 
+            <div id="annotated-text-container">
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
+    <script src="/static/scripts/scripts.js" charset="utf-8"></script>
+  </body>
+</html>  
