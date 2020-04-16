@@ -3,3 +3,4 @@ __pycache__
 logs/**
 !logs/.gitkeep 
 .DS_Store
+keras-contrib/

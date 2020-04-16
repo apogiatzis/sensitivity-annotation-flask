@@ -261,6 +261,7 @@ def logits_to_tokens(sequences, index):
 
 tokenizer = create_tokenizer_from_hub_module()
 model = load_model("model.h5", max_seq_length)
+logger.info("Model done!")
 
 def predict(text):
     global graph
@@ -270,10 +271,8 @@ def predict(text):
     with graph.as_default():
         pre_shapetags = create_shape_features(text)
         pre_shapetags_ids = list(map(lambda t: shape2idx.get(t,0), pre_shapetags))
-
         examples = convert_text_to_examples([text], [pre_shapetags_ids])
         ids, masks, segments, shapetags = convert_examples_to_features(tokenizer, examples,max_seq_length=max_seq_length)
-        
         predictions = model.predict([ids, masks, segments, shapetags])
         annotations = logits_to_tokens(predictions, {i: t for t, i in tag2idx.items()})
         print(annotations)
